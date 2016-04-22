@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+	has_many :line_items
+	before_destroy :ensure_not_references_by_any_line_items
 	validates :title, :description, :image_url, :price, presence: true
 	validates :title, uniqueness: true
 	validates :title, length: {minimum: 10, message: 'Course title is too short.'}
@@ -11,4 +13,16 @@ class Product < ActiveRecord::Base
 	def self.latest
 		Product.order(:updated_at).last
 	end
+
+	private
+
+		# ensure that there are no line items referencing this product
+		def ensure_not_references_by_any_line_items
+			if line_items.empty?
+				return true
+			else
+				errors.add(:base, 'Line Items present, cannot delete product.')
+				return false
+			end
+		end
 end
