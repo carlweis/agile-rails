@@ -59,14 +59,27 @@ body {
 
 #columns {
 	#main {
-		margin-left: 17em;
+		margin-left: 18em;
 		padding: 1em;
 		background: #f3f3f3;
 	}
 	#side {
 		float: left;
-		padding: 1em 2em;
-		width: 13em;
+		padding: 1em;
+		width: 17em;
+
+		#cart {
+			font-size: smaller;
+
+			table {
+				margin-bottom: 10px;
+				border-top: 1px solid #bbb;
+				border-bottom: 1px solid #bbb;
+				td {
+					font-size: 1em;
+				}
+			}
+		}
 
 		ul {
 			padding: 0;
