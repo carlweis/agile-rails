@@ -9,4 +9,16 @@
 		font-weight: bold;
 		border-top: 1px solid #333;
 	}
+	.button-remove-item {
+		border: none;
+		background: transparent;
+		color: #ea4335;
+		font-weight: bold;
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }

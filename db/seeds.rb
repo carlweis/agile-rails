@@ -14,7 +14,7 @@ books.each do |book|
 		title: book,
 		description: "<p>#{Faker::Lorem.paragraph(3)}</p>",
 		image_url: 'ruby.jpg',
-		price: rand(60),
+		price: rand(99),
 	)
 	puts product.inspect
 end
