@@ -1,13 +1,45 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
 
-two:
-  title: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
+
+admin_course:
+  title: Build a site admin interface with Ruby on Rails
+  description:
+    It this course you will learn how to build a site admin for your rails apps.
+    You will be able to re-use this functionality on all of your projects and extend it as you need to.
+  price: 99.99
+  image_url: rails-logo.svg
+
+reddit_course:
+  title: Build a reddit clone with Ruby on Rails
+  description:
+    It this course you will learn how to build a reddit style site, with
+    voting, up or down, comments and social sharing.
+  price: 99.99
+  image_url: rails-logo.svg
+
+craigslist_course:
+  title: Build a craigslist clone with Ruby on Rails
+  description:
+    It this course you will learn how to build a craigslist style social site, with
+    posting, favoriting, following and profiles.
+  price: 199.99
+  image_url: rails-logo.svg
+
+marketplace_course:
+  title: Build a marketplace for buyers and sellers with Ruby on Rails
+  description:
+    It this course you will learn how to add the ability for sellers to sell their posts, using
+    the craigslist social site we built in the last course. We will add merchant accounts, using
+    Braintree payments.
+  price: 199.99
+  image_url: rails-logo.svg
+
+invalid_course:
+  title: Build a marketplace for buyers and sellers with Ruby on Rails
+  description:
+    It this course you will learn how to add the ability for sellers to sell their posts, using
+    the craigslist social site we built in the last course. We will add merchant accounts, using
+    Braintree payments.
+  price: 0.00
+  image_url: rails-logo.svg
