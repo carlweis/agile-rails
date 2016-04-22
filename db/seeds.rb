@@ -7,13 +7,14 @@ require 'faker'
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-course_apps = ['Online Marketplace', 'Project Management', 'Video Screencasts', 'Recipie Maker', 'Modern Blog', 'Instagram Clone', 'CraigsList Clone', 'Ecomerce Store']
-course_apps.each do |app|
+books = ['Programming Ruby 2.0', 'Agile Web Development with Ruby on Rails', 'Coffeescript Unleashed', 'Style your site with SASS', 'Git Workflow']
+difficulty_levels = ['Beginner', 'Intermediate', 'Advanced', 'Expert', 'All']
+books.each do |book|
 	product = Product.create!(
-		title: "Create a #{app} with Ruby on Rails",
-		description: Faker::Lorem.sentence(3),
-		image_url: 'rails-logo.svg',
-		price: rand(600)
+		title: book,
+		description: "<p>#{Faker::Lorem.paragraph(3)}</p>",
+		image_url: 'ruby.jpg',
+		price: rand(60),
 	)
 	puts product.inspect
 end

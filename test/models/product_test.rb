@@ -4,7 +4,7 @@ class ProductTest < ActiveSupport::TestCase
 	fixtures :products
 
 	def setup
-		@product = products(:admin_course)
+		@product = products(:ruby)
 	end
 
 	test 'product attributes must not be empty' do
@@ -14,6 +14,13 @@ class ProductTest < ActiveSupport::TestCase
   	assert product.errors[:description].any?
   	assert product.errors[:price].any?
   	assert product.errors[:image_url].any?
+  end
+
+  test 'product title must be at least 10 characters in length' do
+    product = @product
+    product.title = 'title'
+    assert product.invalid?
+    assert product.errors[:title].any?
   end
 
   test 'product price cannot be negative' do
