@@ -1,0 +1,25 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.checkout-form {
+	label {
+		font-weight: bold;
+		font-size: smaller;
+		display: block;
+		padding-bottom: 0.25em;
+	}
+	input[type='text'], input[type='email'], textarea {
+		border: 1px solid #ededed;
+		padding: 0.25em;
+	}
+	fieldset {
+		background-color: rgba(39, 64, 139, 0.05);
+		border: 1px solid rgba(39, 64, 139, 0.07);
+		legend {
+			color: #fff;
+			background-color: #72278b;
+			font-family: sans-serif;
+			padding: 0.2em 1em;
+		}
+	}
+}

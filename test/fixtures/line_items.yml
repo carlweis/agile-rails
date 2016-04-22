@@ -4,13 +4,16 @@ one:
   product: ruby
   cart: one
   quantity: 1
+  order: one
 
 two:
   product: ruby
   cart: one
   quantity: 2
+  order: two
 
 three:
   product: ruby
   cart: one
   quantity: 3
+  order: one
