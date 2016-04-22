@@ -10,6 +10,6 @@ class CartTest < ActiveSupport::TestCase
 		@cart.add_product(products(:rails).id)
 		@cart.save!
 		assert_equal @cart.line_items.size, 4
-		assert_equal @cart.total_price, 190
+		assert_equal @cart.total_price, 239
 	end
 end

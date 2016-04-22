@@ -3,11 +3,14 @@
 one:
   product: ruby
   cart: one
+  quantity: 1
 
 two:
   product: ruby
   cart: one
+  quantity: 2
 
 three:
   product: ruby
   cart: one
+  quantity: 1

@@ -9,6 +9,19 @@
 		font-weight: bold;
 		border-top: 1px solid #333;
 	}
+	.button-decrement-quantity {
+		border: none;
+		background: transparent;
+		color: #72278b;
+		font-weight: bold;
+		font-size: 0.675em;
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
 	.button-remove-item {
 		border: none;
 		background: transparent;
