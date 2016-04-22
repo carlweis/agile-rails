@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Devflix | Profesional Developer Training</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
-</body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Depot | Profesional Developer Training</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body class='<%= controller.controller_name %>'>
+		<div id="banner">
+			<%= image_tag('logo.svg') %>
+			<%= @page_title || 'Pragmatic Bookshelf' %>
+		</div>
+		<div id="columns">
+			<div id="side">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Questions</a></li> 
+					<li><a href="#">News</a></li> 
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div id="main">
+				<%= yield %>		
+			</div>
+		</div>
+	</body>
 </html>

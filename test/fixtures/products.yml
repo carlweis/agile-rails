@@ -9,3 +9,24 @@ ruby:
       delivered fast, you should add Ruby to your toolbox.</p>
   price: 49.50 
   image_url: ruby.jpg
+
+rails:
+  title: Agile Web Development with Rails 4 
+  description:
+      <p>Rails just keeps on changing. Both Rails 3 and 4, as well as Ruby 1.9 and 2.0, bring hundreds 
+      of improvements, including new APIs and substantial performance enhancements. 
+      The fourth edition of this award-winning classic has been reorganized and refocused so
+      it’s more useful than ever before for developers new to Ruby and Rails.</p>
+  price: 43.50 
+  image_url: rails_logo.svg
+
+coffeescript:
+  title: Coffeescript Unleased 
+  description:
+      <p>Over the last five years, CoffeeScript has taken the web development world by storm. 
+      With the humble motto “It’s just JavaScript,” CoffeeScript provides all the power of the 
+      JavaScript language in a friendly and elegant package. This extensively revised and updated 
+      new edition includes an all-new project to demonstrate CoffeeScript in action, both in the browser and 
+      on a Node.js server. There’s no faster way to learn to write a modern web application.</p>
+  price: 29.00 
+  image_url: coffeescript.jpg
