@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :orders
   root 'store#index', as: 'store'
   
-  resources :products
+  resources :products do
+    get :who_bought, on: :member
+  end
+  
   resources :line_items do
   	member do
   		post 'decrement'
