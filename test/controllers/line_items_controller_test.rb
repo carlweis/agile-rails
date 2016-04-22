@@ -3,6 +3,7 @@ require 'test_helper'
 class LineItemsControllerTest < ActionController::TestCase
   setup do
     @line_item = line_items(:one)
+    @line_item2 = line_items(:two)
   end
 
   test "should get index" do
@@ -30,7 +31,7 @@ class LineItemsControllerTest < ActionController::TestCase
     end
     assert_response :success 
     assert_select_jquery :html, '#cart' do
-      assert_select 'tr.current_item td', 4 
+      assert_select 'tr.current_item td', 5 
     end
   end
 
@@ -44,15 +45,30 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should decrement line_item quantity and remove when zero" do
-    post :decrement, id: @line_item
-    assert_equal 1, @line_item.quantity
+   test "should decrement line_item quantity" do
+    post :decrement, id: @line_item2
+    @line_item2.reload
+    assert_equal 1, @line_item2.quantity
   end
 
-   test 'should decrement line_item quantity and remove when zero via ajax' do
-    xhr :post, :decrement, id: @line_item
+   test 'should decrement line_item quantity via ajax' do
+    xhr :post, :decrement, id: @line_item2
     assert_response :success
-    assert_equal 1, @line_item.quantity
+    @line_item2.reload
+    assert_equal 1, @line_item2.quantity
+  end
+
+  test "should increment line_item quantity" do
+    post :increment, id: @line_item
+    @line_item.reload
+    assert_equal 2, @line_item.quantity
+  end
+
+   test 'should increment line_item quantity via ajax' do
+    xhr :post, :increment, id: @line_item
+    assert_response :success
+    @line_item.reload
+    assert_equal 2, @line_item.quantity
   end
 
   test "should update line_item" do

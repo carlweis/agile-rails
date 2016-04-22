@@ -93,3 +93,15 @@ body {
 		}
 	}
 }
+
+// buttons
+input[type='submit'], .button {
+	background-color: $brand-primary;
+	color: #fff;
+	border: none;
+	padding: 0.5em 1em;
+	&:hover {
+		cursor: pointer;
+		background-color: $brand-secondary;
+	}
+}

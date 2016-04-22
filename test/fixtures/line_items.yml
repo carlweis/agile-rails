@@ -13,4 +13,4 @@ two:
 three:
   product: ruby
   cart: one
-  quantity: 1
+  quantity: 3

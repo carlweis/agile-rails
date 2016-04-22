@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create, :destroy, :decrement]
+  before_action :set_cart, only: [:create, :destroy, :decrement, :increment]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -65,7 +65,19 @@ class LineItemsController < ApplicationController
     end
     respond_to do |format|
       format.js {@current_item = @line_item}
-      format.html {redirect_to store_url, notice: 'Cart quantity updated'}
+      format.html {redirect_to store_url, notice: 'Removed item from cart'}
+      format.json {head :no_content}
+    end
+  end
+
+   # POST /line_items/1/increment
+  def increment
+    @line_item = LineItem.find_by(id: params[:id])
+    @line_item.quantity += 1
+    @line_item.save
+    respond_to do |format|
+      format.js {@current_item = @line_item}
+      format.html {redirect_to store_url, notice: 'Added item to cart'}
       format.json {head :no_content}
     end
   end
