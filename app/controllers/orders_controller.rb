@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
+  before_action :disable_checkout_button, only: [:new, :edit, :show]
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
@@ -71,6 +72,11 @@ class OrdersController < ApplicationController
   end
 
   private
+    # disable the checkout button while on the checkout page
+    def disable_checkout_button
+      @checkout_button_disabled = true
+      return @checkout_button_disabled
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])
