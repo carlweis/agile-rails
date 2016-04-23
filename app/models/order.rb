@@ -1,6 +1,10 @@
 class Order < ActiveRecord::Base
+
+	# relationships
 	has_many :line_items, dependent: :destroy
  	belongs_to :payment_type
+	
+	# validates
 	validates :name, :address, :email, presence: true
 	validates :payment_type_id, presence: true
 

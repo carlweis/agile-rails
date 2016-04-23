@@ -1,0 +1,27 @@
+<h1>Order Updated</h1>
+
+<p>
+	Dear <strong><%= @order.name %></strong>,<br>
+	Your recent order from The Pragmatic Store has been updated.
+</p>
+<hr>
+<p>You ordered the following items:</p>
+<br>
+<ul>
+	<% @order.line_items.each do |item| %>
+	<li>
+		Item:&nbsp;<%= item.product.title %> |&nbsp;Qty:&nbsp;<%= item.quantity %> &nbsp;|&nbsp; Price:&nbsp; <%= number_to_currency item.total_price %>
+	</li>
+	<% end %>
+</ul>
+<br>
+<p style="text-align: center">Order Total</p>
+<h2 style="text-align: center"><%= number_to_currency @order.line_items.map(&:total_price).sum %></h2>
+<p>
+  Your order will ship on <%= @order.ship_date %>
+</p>
+<br><br>
+<p>
+	Thank You,<br>
+	<strong>The Pragmatic Store</strong>
+</p>

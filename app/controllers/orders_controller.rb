@@ -38,6 +38,9 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        # set the orders ship_date to two weeks from now
+        @order.ship_date = Time.now + 14.days
+        @order.save
 
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
@@ -56,6 +59,13 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
+
+        if @order.ship_date_changed?
+          # email customer that their order ship date has been updated
+          OrderNotifier.shipping_updated(@order).deliver_now
+        end
+        
+        
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else

@@ -22,4 +22,9 @@ class OrderNotifier < ApplicationMailer
 
     mail to: order.email, subject: 'Pragmatic Store Order Shipped'
   end
+
+  def shipping_updated(order)
+    @order = order
+    mail to: order.eamil, subject: 'Pragmatic Store Order Shipping Update'
+  end
 end
