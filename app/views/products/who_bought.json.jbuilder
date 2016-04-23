@@ -18,6 +18,6 @@ json.description "Latest Orders Feed"
 			end
 		end
 		json.subtotal number_to_currency(order.line_items.map(&:total_price).sum)
-		json.payment order.pay_type
+		json.payment order.payment_type.name
 	end
 end

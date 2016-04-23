@@ -1,0 +1,13 @@
+Dear <%= @order.name %>
+
+Your recent order from The Pragmatic Store has shipped.
+
+You ordered the following items:
+
+<%= render @order.line_items %>
+
+You should receive your order in 5-10 days.
+
+Thank You,
+The Pragmatic Store
+

@@ -21,7 +21,7 @@ xml.rss("version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/") do
 				end
 			end
 			xml.subtotal number_to_currency order.line_items.map(&:total_price).sum
-			xml.payment "Paid by #{order.pay_type}"
+			xml.payment "Paid by #{order.payment_type.name}"
 			xml.tag!("customer") do
 				xml.name order.name
 				xml.email order.email

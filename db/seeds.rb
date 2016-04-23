@@ -18,3 +18,9 @@ books.each do |book|
 	)
 	puts product.inspect
 end
+
+# Seed Payment Types
+types = ['Check', 'Purchase Order', 'Credit Card', 'Paypal']
+types.each do |type|
+	PaymentType.create!(name: type)
+end
